@@ -1,0 +1,90 @@
+[
+  {
+    "id": 101,
+    "name": "Alice",
+    "isActive": true,
+    "lastLogin": "2023-10-25T08:30:00Z"
+  },
+  {
+    "products": [
+      {
+        "id": "P001",
+        "name": "Laptop",
+        "price": 999.99
+      },
+      {
+        "id": "P002",
+        "name": "Mouse",
+        "price": 19.99
+      }
+    ]
+  },
+  {
+    "user": {
+      "name": "Bob",
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "zipcode": "10001"
+      }
+    }
+  },
+  {
+    "metadata": {},
+    "tags": []
+  },
+  {
+    "data": [
+      42,
+      "hello",
+      true,
+      null,
+      {
+        "key": "value"
+      }
+    ]
+  },
+  {
+    "message": "Line 1\\nLine 2\\tTabbed",
+    "regex": "^[A-Za-z0-9_\\-]+$"
+  },
+  {
+    "scientificValue": 6.022e23,
+    "smallNumber": 1.6e-19
+  },
+  {
+    "text": {
+      "en": "Hello",
+      "zh": "你好",
+      "emoji": "👋"
+    }
+  },
+  {
+    "error": {
+      "code": 404,
+      "message": "Resource not found",
+      "details": [
+        "/users/999 does not exist"
+      ]
+    },
+    "timestamp": "2023-10-25T10:15:00Z"
+  },
+  {
+    "id": "order-123",
+    "items": [
+      {
+        "product": "P001",
+        "quantity": 2,
+        "options": {
+          "color": "red",
+          "warranty": true
+        }
+      }
+    ],
+    "payment": {
+      "method": "credit_card",
+      "amount": 2039.98,
+      "currency": "USD"
+    }
+  }
+]
