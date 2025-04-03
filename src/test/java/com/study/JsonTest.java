@@ -14,15 +14,17 @@ import java.util.List;
  **/
 public class JsonTest {
 
+
+
     @Test
     public void testParse() throws Exception {
 
         List<String> list = FileUtils.extractAllJsonStrings("D:\\STUDY\\code\\Java\\json\\src\\test\\java\\com\\study\\data.json");
 
-        for (String jsonString : list) {
-            JsonObject object = Json.parseToJsonObject(jsonString);
-            System.out.println(object);
-        }
+        String jsonStr = list.get(0);
+
+        User user = Json.parseToClass(jsonStr, User.class);
+        System.out.println(user);
 
     }
 
