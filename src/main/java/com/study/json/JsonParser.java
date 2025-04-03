@@ -9,10 +9,23 @@ import java.util.ListIterator;
 
 /**
  * @author 王文涛
+ * @description 语法解析器
  */
 public class JsonParser {
+
+    /**
+     * 词法解析器生成的token序列
+     */
     private final List<Token> tokens;
+
+    /**
+     * 词法解析器生成的token序列的迭代器
+     */
     private final ListIterator<Token> iterator;
+
+    /**
+     * 当前token
+     */
     private Token currentToken;
 
     public JsonParser(List<Token> tokens) {
@@ -57,6 +70,7 @@ public class JsonParser {
             jsonObject.put(key, value);
 
             if (currentToken.getType() != TokenType.END_OBJECT) {
+                // 还没有结束，下一个应该是，字符
                 consume(TokenType.SEP_COMMA);
             }
         }
@@ -115,12 +129,14 @@ public class JsonParser {
     }
 
     private void consume(TokenType expectedType) {
+        // 当前token类型和期望类型不匹配，抛出异常
         if (currentToken.getType() != expectedType) {
             throw new JsonParseException("Expected " + expectedType + " but found " + currentToken);
         }
         if (iterator.hasNext()) {
             currentToken = iterator.next();
         } else {
+            // 结束标记
             currentToken = new Token(TokenType.END_DOCUMENT, null);
         }
     }
