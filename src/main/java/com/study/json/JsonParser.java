@@ -1,7 +1,5 @@
-package com.study.json.util;
+package com.study.json;
 
-import com.study.json.JsonArray;
-import com.study.json.JsonObject;
 import com.study.json.enums.TokenType;
 import com.study.json.exception.JsonParseException;
 import com.study.json.pojo.Token;
