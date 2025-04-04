@@ -5,6 +5,7 @@ package com.study.json.enums;
  * @date 2025/4/3
  * @description 常用的合法json token类型
  **/
+
 public enum TokenType {
 
     /**

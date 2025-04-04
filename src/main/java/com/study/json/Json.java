@@ -1,7 +1,6 @@
 package com.study.json;
 
 import com.study.json.exception.JsonParseException;
-import com.study.json.pojo.CharReader;
 import com.study.json.pojo.Token;
 
 import java.io.IOException;
@@ -22,8 +21,8 @@ public class Json {
 
     public static Object parse(Reader reader) throws IOException {
         CharReader charReader = new CharReader(reader);
-        Tokenizer tokenizer = new Tokenizer();
-        List<Token> tokens = tokenizer.tokenize(charReader);
+        JsonTokenizer tokenizer = new JsonTokenizer();
+        List<Token> tokens = tokenizer.tokenizer(charReader);
         JsonParser parser = new JsonParser(tokens);
         return parser.parse();
     }

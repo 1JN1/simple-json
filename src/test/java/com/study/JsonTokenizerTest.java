@@ -1,12 +1,11 @@
 package com.study;
 
-import com.study.json.Tokenizer;
-import com.study.json.pojo.CharReader;
+import com.study.json.JsonTokenizer;
+import com.study.json.CharReader;
 import com.study.json.pojo.Token;
 import com.study.json.util.FileUtils;
 import org.junit.Test;
 
-import java.io.StringReader;
 import java.util.List;
 
 /**
@@ -14,7 +13,7 @@ import java.util.List;
  * @date 2025/4/3
  * @description
  **/
-public class TokenizerTest {
+public class JsonTokenizerTest {
 
     @Test
     public void test1() throws Exception {
@@ -31,13 +30,11 @@ public class TokenizerTest {
 
         List<String> jsonStrs = FileUtils.extractAllJsonStrings("D:\\STUDY\\code\\Java\\json\\src\\test\\java\\com\\study\\data.json");
 
-        Tokenizer tokenizer = new Tokenizer();
+        JsonTokenizer tokenizer = new JsonTokenizer();
 
         for (String jsonStr : jsonStrs) {
 
-            CharReader charReader = new CharReader(jsonStr);
-
-            List<Token> tokenize = tokenizer.tokenize(charReader);
+            List<Token> tokenize = tokenizer.tokenizer(jsonStr);
 
             System.out.println("====================");
             for (Token token : tokenize) {
